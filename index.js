@@ -14,9 +14,9 @@ app.post('/hello-data', (req, res) => {
     const inputData = req.body.data;
     const returData = crypto.doSomeStuff(inputData);
 
-    res.send('POST Request :::: ' + returData);
+    res.json({resultData: returData});
 });
 
-app.listen(1234);
-
-console.log('viewed at http://localhost:1234');
+app.listen(1234, () => {
+    console.log('viewed at http://localhost:1234');
+});

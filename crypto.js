@@ -1,4 +1,4 @@
-const doSomeStuff = (data) =>  `Hello Crypto ---> "${data}"`;
+const doSomeStuff = (data) =>  `Hello Data "${data}"`;
 
 module.exports = {
     doSomeStuff
