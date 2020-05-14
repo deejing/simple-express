@@ -10,11 +10,23 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/hello-data', (req, res) => {
-    const inputData = req.body.data;
-    const returData = crypto.doSomeStuff(inputData);
 
-    res.json({resultData: returData});
+app.post('/hello-data', (req, res) => {
+    const inputData = parseFloat(req.body.data);
+
+    console.log(inputData);
+
+    const returData = crypto.multiply5(inputData);
+
+    res.json({data: returData});
+});
+
+app.get('/hello-get', (req, res) => {
+
+    const inputData = req.query.data;
+    const returData = crypto.doSomeStuff(inputData);
+    
+    res.json({data: returData});
 });
 
 app.listen(1234, () => {

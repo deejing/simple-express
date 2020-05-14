@@ -1,5 +1,5 @@
 <form id="myForm">
-    <input type="text" placeholder="some value" name="data" id="input-data">
+    <input type="number" placeholder="some value" name="data" id="input-data">
     <button type="submit">send</button>
 </form>
 <pre id="result" style="border-radius: 2px; padding: 10px; border: 1px solid #e0e0e0"></pre>
@@ -15,7 +15,7 @@ function serviceRequest(input) {
             const responseData = JSON.parse(this.response);
 
             resultContainer.innerHTML = `
-            resultData: ${responseData.resultData}
+            resultData: ${responseData.data}
             json: ${this.response}
             `;
         }
@@ -33,7 +33,7 @@ myForm.addEventListener("submit", function(event) {
     const inputData = document.getElementById('input-data').value;
 
     console.log('submit', inputData);
-    
+
     serviceRequest(inputData);
 });
 </script>
